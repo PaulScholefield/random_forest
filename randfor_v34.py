@@ -37,7 +37,7 @@ import shapely.geometry
 import rasterio
 
 
-output_directory='H:\P12812_Bridgend_INNS\Segmentation'
+output_directory='Segmentation'
 
 def segment_image(method, image_multi, use_multiband_for_quickshift=False):
     if use_multiband_for_quickshift and method == 'quickshift':
