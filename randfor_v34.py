@@ -37,7 +37,7 @@ import shapely.geometry
 import rasterio
 
 
-output_directory='Segmentation'
+output_directory='H:\P12812_Bridgend_INNS\Segmentation'
 
 def segment_image(method, image_multi, use_multiband_for_quickshift=False):
     if use_multiband_for_quickshift and method == 'quickshift':
@@ -58,8 +58,10 @@ def segment_image(method, image_multi, use_multiband_for_quickshift=False):
             raise ValueError("Unknown segmentation method: {}".format(method))
 
 # Load the raster data
-#raster_path = 'Composite_RGB_CHM.tif'
-raster_path='land_cover.tif'
+raster_path = 'H:\P12812_Bridgend_INNS\Segmentation\Composite_16band_1sqkm.tif'
+#raster_path='land_cover.tif'
+#raster_path='Composite_raster_1m.tif'
+
 with rasterio.open(raster_path) as src:
     image_multi = src.read()  # multiband data
     # Select three bands for RGB representation (e.g., bands 1, 2, and 3)
@@ -108,7 +110,7 @@ print(f"Segmented data saved to {segmented_data_path}")
 
 # Load the training data from shapefile
 #training_data = gpd.read_file('land_use_training.shp')
-training_data = gpd.read_file('land_cover_training_data.shp')
+training_data = gpd.read_file('INNS_training.shp')
 
 # Load the raster data
 with rasterio.open(raster_path) as src:
