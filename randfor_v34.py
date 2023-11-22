@@ -1,9 +1,34 @@
 # -*- coding: utf-8 -*-
 """
-Created on Mon Nov  6 13:42:36 2023
+Geospatial Image Segmentation and Classification Script
 
-@author: Paul Scholefield
+Author: Paul Scholefield
+Created on: Nov 6, 2023
+
+Description:
+This script is designed for advanced geospatial analysis, focusing on the segmentation of raster images, 
+feature extraction from these segments, and classification using a Random Forest model. It is particularly 
+useful in environmental studies, land cover mapping, and similar fields requiring detailed image analysis.
+
+Key Functionalities:
+1. Image Segmentation: Utilizes methods such as 'quickshift', 'slic', and 'watershed' for segmenting multiband 
+   raster images.
+2. Feature Extraction: Extracts statistical features (mean and standard deviation) from each segment of the 
+   raster image.
+3. Random Forest Classification: Trains a Random Forest classifier on the extracted features and classifies 
+   each segment.
+4. Output Generation: Produces various outputs including segmented image files, shapefiles with segmentation 
+   data, and classified raster images.
+
+Usage:
+1. Ensure all dependencies are installed (geopandas, rasterio, scikit-learn, etc.).
+2. Place the raster image and training data shapefile in the designated directories.
+3. Run the script in a Python environment. Modify parameters like `raster_path` and `training_data_path` as needed.
+4. Review the output files in the specified output directory.
+
+This script requires a basic understanding of Python programming and geospatial analysis concepts.
 """
+
 for name in dir():
     if not name.startswith('_'):
         del globals()[name]
