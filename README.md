@@ -1,7 +1,5 @@
-# random_forest
-A short script to take a multiband raster and a set of training data, and classify the raster using segmentation
-
 # Geospatial Image Segmentation and Classification Script
+A short script to take a multiband raster and a set of training data, and classify the raster using segmentation
 
 ## Installation Instructions
 
@@ -24,7 +22,6 @@ source venv/bin/activate
 3. **Install Dependencies**:
 python -m pip install --upgrade pip
 pip install numpy geopandas rasterio rasterstats scikit-learn scikit-image imbalanced-learn tqdm matplotlib
-
 
 ### Notes
 - Ensure you have a multiband raster image (`.tif`) and a training data shapefile (`.shp`).
